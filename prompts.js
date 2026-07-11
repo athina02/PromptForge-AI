@@ -329,5 +329,305 @@ const PROMPTS = [
     createdAt: "2026-05-08",
     prompt:
       "Take this core message — [paste your message/idea] — and adapt it into 3 native captions: one for Instagram (visual-first, short), one for LinkedIn (context-first, slightly longer, no hashtags), and one for X/Twitter (under 280 characters, punchy). Each should read as if written for that platform, not copy-pasted across."
+  },
+  {
+    id: 26,
+    title: "Competitive Positioning Matrix",
+    category: "Business",
+    ai: "Claude",
+    level: "Advanced",
+    tags: ["strategy", "competitors", "positioning"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Act as a positioning strategist. Given my product — [describe product] — and 3 competitors — [list competitors] — build a positioning matrix comparing us on 4 axes that actually matter to the buyer (not vanity features). For each axis, state where we win, where we lose, and one repositioning move that would shift the whole map in our favor without a product change."
+  },
+  {
+    id: 27,
+    title: "Pricing Page Objection Killer",
+    category: "Business",
+    ai: "ChatGPT",
+    level: "Intermediate",
+    tags: ["pricing", "conversion", "objections"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Here are our 3 pricing tiers: [list tiers with price and features]. Write short objection-handling copy (1-2 sentences each) for the 4 most common hesitations a buyer has at this price point — cost, commitment, missing feature, and 'can I do this myself for free.' Place each next to the tier it's most likely to appear on, and keep the tone confident, not apologetic."
+  },
+  {
+    id: 28,
+    title: "Board Meeting Agenda Builder",
+    category: "Business",
+    ai: "Claude",
+    level: "Advanced",
+    tags: ["board", "governance", "meetings"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Build a 60-minute board meeting agenda for [company/stage]. Allocate time blocks, and for each item specify whether it's for information, discussion, or a decision that requires a vote. Front-load the single most important strategic decision rather than burying it after routine updates, and include a pre-read list of what should be sent 48 hours in advance."
+  },
+  {
+    id: 29,
+    title: "Customer Churn Diagnosis",
+    category: "Business",
+    ai: "ChatGPT",
+    level: "Advanced",
+    tags: ["churn", "retention", "customers"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "We're seeing [churn rate/number] monthly churn in [customer segment]. Here's what we know about the cancelling accounts: [paste usage patterns, feedback, or survey data]. Act as a retention consultant: propose 3 hypotheses for the root cause ranked by likelihood, the fastest way to validate each one, and one retention offer per hypothesis that addresses the cause rather than just discounting."
+  },
+  {
+    id: 30,
+    title: "Elevator Pitch in Three Lengths",
+    category: "Business",
+    ai: "Claude",
+    level: "Beginner",
+    tags: ["pitch", "elevator-pitch", "networking"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Write my elevator pitch for [company/product] in 3 lengths: a 10-second version for a hallway introduction, a 30-second version for a networking event, and a 60-second version for an investor who just asked 'so what do you do.' Each version must stand alone — the 30-second isn't just the 10-second with more words, it should add the 'why now' or 'why us' angle."
+  },
+  {
+    id: 31,
+    title: "Cornell Notes Converter",
+    category: "Study",
+    ai: "ChatGPT",
+    level: "Beginner",
+    tags: ["notes", "cornell-method", "organization"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Convert the lecture notes I paste below into the Cornell Notes format: a cues column with 6-10 trigger questions, a main notes column with the key content condensed and organized under those cues, and a 3-sentence summary at the bottom that could stand alone as a study recap. Notes: [paste raw notes here]"
+  },
+  {
+    id: 32,
+    title: "Research Paper Source Evaluator",
+    category: "Study",
+    ai: "Claude",
+    level: "Advanced",
+    tags: ["research", "sources", "academic-writing"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "I'm writing a research paper on [topic] and considering this source: [paste abstract or summary]. Evaluate it on credibility (author expertise, publication venue, recency), relevance to my specific thesis — [state thesis] — and potential bias. Tell me whether it belongs as a primary source, supporting evidence, or a counter-argument to address, and suggest one search term to find a stronger source if this one is weak."
+  },
+  {
+    id: 33,
+    title: "Language Learning Conversation Partner",
+    category: "Study",
+    ai: "ChatGPT",
+    level: "Intermediate",
+    tags: ["language-learning", "conversation", "practice"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Act as a conversation partner in [target language] at a [CEFR level, e.g. B1] level. Start a natural dialogue about [topic] and stay fully in the target language unless I write 'switch to English.' After every 3 of my responses, gently correct my 2 biggest grammar or vocabulary mistakes in a short aside, then continue the conversation without breaking the flow."
+  },
+  {
+    id: 34,
+    title: "Group Project Task Splitter",
+    category: "Study",
+    ai: "Gemini",
+    level: "Beginner",
+    tags: ["group-work", "collaboration", "planning"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "We have a group project on [topic] due [date] with [number] members and these individual strengths: [list members and strengths]. Break the project into clear, non-overlapping workstreams, assign each to the member best suited for it, define what 'done' looks like for each piece, and propose 2 checkpoint dates before the deadline to catch problems early."
+  },
+  {
+    id: 35,
+    title: "Docker Compose Environment Generator",
+    category: "Coding",
+    ai: "Claude",
+    level: "Intermediate",
+    tags: ["docker", "devops", "local-dev"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Generate a docker-compose.yml for a local development environment with these services: [list services, e.g. Node API, Postgres, Redis]. Include sensible environment variables, a named volume for the database so data survives restarts, health checks on each service, and comments explaining any non-obvious configuration choice. Flag any port that commonly conflicts with a default local install."
+  },
+  {
+    id: 36,
+    title: "Legacy Code Onboarding Map",
+    category: "Coding",
+    ai: "ChatGPT",
+    level: "Advanced",
+    tags: ["legacy-code", "onboarding", "architecture"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "I'm new to this codebase and need to understand it fast. Here's the directory structure and a sample of key files: [paste tree + file excerpts]. Produce an onboarding map: the likely entry point, how data flows through the top 3 layers, which parts look fragile or under-tested, and 3 targeted questions I should ask the team before touching anything."
+  },
+  {
+    id: 37,
+    title: "GraphQL Schema Designer",
+    category: "Coding",
+    ai: "Claude",
+    level: "Advanced",
+    tags: ["graphql", "schema", "api-design"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Design a GraphQL schema for a [domain] application with these entities: [list entities and relationships]. Define types, queries, and mutations, using proper nullability (only nullable where a field can genuinely be absent). Flag any N+1 query risk in the relationships and recommend where a DataLoader pattern would be necessary."
+  },
+  {
+    id: 38,
+    title: "CI/CD Pipeline From Scratch",
+    category: "Coding",
+    ai: "ChatGPT",
+    level: "Advanced",
+    tags: ["ci-cd", "devops", "automation"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Design a CI/CD pipeline for a [language/framework] project deployed to [platform, e.g. AWS, Vercel]. Stages should include: install/cache dependencies, lint, test with coverage threshold, build, and a deploy step gated on a manual approval for production. Write it as a config file for [CI tool, e.g. GitHub Actions] and explain any stage that can run in parallel to cut pipeline time."
+  },
+  {
+    id: 39,
+    title: "Regex Builder With Explanation",
+    category: "Coding",
+    ai: "Gemini",
+    level: "Beginner",
+    tags: ["regex", "validation", "patterns"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Write a regular expression that matches [describe the exact pattern, e.g. 'US phone numbers with optional country code']. Show 3 strings it should match and 3 it should correctly reject. Then break the regex down piece by piece in plain English so I can modify it myself later without looking it up again."
+  },
+  {
+    id: 40,
+    title: "LinkedIn Thought-Leadership Post",
+    category: "Social",
+    ai: "Claude",
+    level: "Intermediate",
+    tags: ["linkedin", "thought-leadership", "b2b"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Write a LinkedIn post sharing a lesson I learned from [specific experience/failure/win]. Open with a one-line hook that states the lesson before the story, tell the story in 3 short paragraphs with no corporate speak, and close with a genuine question that invites people to share their own experience — not 'thoughts?'"
+  },
+  {
+    id: 41,
+    title: "Community AMA Question Set",
+    category: "Social",
+    ai: "ChatGPT",
+    level: "Beginner",
+    tags: ["community", "ama", "engagement"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "I'm hosting an AMA about [topic/expertise] for my [platform] community. Generate 12 seed questions to post if engagement is slow, ranging from beginner-friendly to genuinely hard, plus 3 follow-up questions I could ask myself if a great answer needs more depth. Avoid questions I could answer in one word."
+  },
+  {
+    id: 42,
+    title: "Viral Thread Structure",
+    category: "Social",
+    ai: "Claude",
+    level: "Intermediate",
+    tags: ["twitter", "threads", "storytelling"],
+    trending: true,
+    createdAt: "2026-07-11",
+    prompt:
+      "Turn this idea — [paste idea or draft] — into a 7-tweet thread. Tweet 1 is the hook and must work as a standalone tweet even if no one reads further. Tweets 2-6 each deliver one specific, useful point (no filler transitions like 'here's the thing'). Tweet 7 closes with a takeaway and a soft call to action. Keep every tweet under 240 characters."
+  },
+  {
+    id: 43,
+    title: "Influencer Collab Pitch Message",
+    category: "Social",
+    ai: "ChatGPT",
+    level: "Beginner",
+    tags: ["influencer", "outreach", "partnerships"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Write a DM pitching a collaboration to a [platform] creator with [audience size/niche] about [product/campaign]. Reference something specific about their recent content to prove I actually follow them, state exactly what's in it for them (not just for me), and keep the whole message under 80 words so it doesn't read as a mass-sent template."
+  },
+  {
+    id: 44,
+    title: "Post-Workout Recovery Planner",
+    category: "Fitness",
+    ai: "Claude",
+    level: "Beginner",
+    tags: ["recovery", "sleep", "soreness"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "I just finished a [type of workout, e.g. heavy leg day] session at [intensity level]. Build me a 24-hour recovery plan: what to eat in the first 2 hours, a stretching or mobility sequence for the muscle groups worked, a sleep target, and one sign that would indicate I'm under-recovering and should adjust tomorrow's session."
+  },
+  {
+    id: 45,
+    title: "Home Gym Equipment Substitution Guide",
+    category: "Fitness",
+    ai: "Gemini",
+    level: "Beginner",
+    tags: ["home-workout", "equipment", "substitutions"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Here's my planned gym workout: [list exercises with sets/reps]. I only have [list home equipment, e.g. resistance bands, one pair of dumbbells] at home today. For each exercise, give the closest home substitution that trains the same muscle group and movement pattern, adjusted reps/tempo to compensate for lower resistance, and flag any exercise with no safe substitute."
+  },
+  {
+    id: 46,
+    title: "Race-Day Nutrition Timeline",
+    category: "Fitness",
+    ai: "ChatGPT",
+    level: "Advanced",
+    tags: ["running", "race-day", "nutrition"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "I'm running a [distance, e.g. half marathon] with a [start time] start. Build a nutrition and hydration timeline starting the night before through the race itself: what to eat/drink and when, a caffeine strategy if I use one, an in-race fueling plan by mile/km, and one adjustment for [weather condition, e.g. hot and humid] conditions."
+  },
+  {
+    id: 47,
+    title: "Mobility Warm-Up Sequence",
+    category: "Fitness",
+    ai: "Claude",
+    level: "Beginner",
+    tags: ["mobility", "warm-up", "flexibility"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Build a 10-minute dynamic warm-up sequence before [activity, e.g. heavy squats, a run, a basketball game]. Order movements from general to specific, include rep counts or duration for each, and explain in one line why each movement matters for that specific activity so I understand the purpose, not just the checklist."
+  },
+  {
+    id: 48,
+    title: "Freelance Proposal Generator",
+    category: "Business",
+    ai: "Claude",
+    level: "Intermediate",
+    tags: ["freelance", "proposal", "client-work"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Write a freelance project proposal for a [service, e.g. website redesign] client. Structure: a one-paragraph understanding of their problem in their own language (not mine), a scope of work broken into clear phases, a timeline with milestones, pricing presented as a package rather than an hourly rate, and one clarifying question that shows I've actually thought about their specific situation."
+  },
+  {
+    id: 49,
+    title: "Algorithm Complexity Explainer",
+    category: "Coding",
+    ai: "ChatGPT",
+    level: "Intermediate",
+    tags: ["algorithms", "big-o", "interview-prep"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "Here's my solution to [problem, e.g. 'find duplicates in an array']: [paste code]. Determine its exact time and space complexity with a line-by-line justification, not just the final Big-O. Then show one alternative approach with a better complexity tradeoff, and explain the tradeoff in practical terms (when the 'better' one actually isn't worth the added complexity)."
+  },
+  {
+    id: 50,
+    title: "Pomodoro Study Session Planner",
+    category: "Study",
+    ai: "ChatGPT",
+    level: "Beginner",
+    tags: ["pomodoro", "focus", "productivity"],
+    trending: false,
+    createdAt: "2026-07-11",
+    prompt:
+      "I have [total time available] to study [subject/topics] today. Build a Pomodoro-based session plan: how many 25/5 blocks fit, which topic or task goes in each block ordered from hardest to easiest while my focus is fresh, and one specific 5-minute break activity per block that won't kill my momentum (nothing involving a phone feed)."
   }
 ];
