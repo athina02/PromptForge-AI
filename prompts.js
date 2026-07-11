@@ -20,7 +20,19 @@ const CATEGORIES = [
   { id: "Study", icon: "📚", blurb: "Learning & exam prep" },
   { id: "Coding", icon: "💻", blurb: "Ship code faster" },
   { id: "Social", icon: "📱", blurb: "Posts that get noticed" },
-  { id: "Fitness", icon: "🏋️", blurb: "Training & nutrition" }
+  { id: "Fitness", icon: "🏋️", blurb: "Training & nutrition" }, 
+{ id: "Marketing", icon: "📈", blurb: "Ads & growth marketing" },
+{ id: "AI", icon: "🤖", blurb: "AI workflows & automation" },
+{ id: "Writing", icon: "✍️", blurb: "Blogs, books & copywriting" },
+{ id: "Design", icon: "🎨", blurb: "UI, UX & graphics" },
+{ id: "Career", icon: "💼", blurb: "Jobs & interviews" },
+{ id: "Finance", icon: "💰", blurb: "Money & investing" },
+{ id: "Productivity", icon: "⚡", blurb: "Focus & time management" },
+{ id: "Education", icon: "🎓", blurb: "Teaching & learning" },
+{ id: "Content", icon: "🎥", blurb: "YouTube & content creation" },
+{ id: "Legal", icon: "⚖️", blurb: "Contracts & legal writing" },
+{ id: "Travel", icon: "✈️", blurb: "Trips & itineraries" },
+{ id: "Health", icon: "🩺", blurb: "Wellness & healthy living" }
 ];
 
 /**
