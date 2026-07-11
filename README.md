@@ -1,5 +1,11 @@
 # 🐸 PromptForge AI
 
+![Version](https://img.shields.io/badge/version-v1.0-brightgreen)
+![PWA](https://img.shields.io/badge/PWA-Ready-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+# 🐸 PromptForge AI
+
 > **Build Better Prompts.**
 
 PromptForge AI is a modern Progressive Web App (PWA) that helps users discover, search, save, and instantly copy high-quality AI prompts. It is designed with a premium glassmorphism interface and works both online and offline.
