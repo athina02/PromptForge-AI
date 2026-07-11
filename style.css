@@ -971,3 +971,21 @@ body{
   .section{ padding-top: var(--sp-5); }
   .settings-profile{ padding: var(--sp-4) 0 var(--sp-3); }
 }
+
+.support-btn{
+    display:block;
+    width:220px;
+    margin:20px auto;
+    padding:14px;
+    text-align:center;
+    background:#ff4d4d;
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.support-btn:hover{
+    background:#e63946;
+}
