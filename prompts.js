@@ -629,5 +629,65 @@ const PROMPTS = [
     createdAt: "2026-07-11",
     prompt:
       "I have [total time available] to study [subject/topics] today. Build a Pomodoro-based session plan: how many 25/5 blocks fit, which topic or task goes in each block ordered from hardest to easiest while my focus is fresh, and one specific 5-minute break activity per block that won't kill my momentum (nothing involving a phone feed)."
-  }
+  }, 
+{
+  id: 51,
+  title: "SaaS Landing Page Copy Generator",
+  category: "Business",
+  ai: "Claude",
+  level: "Intermediate",
+  tags: ["saas", "landing-page", "copywriting", "conversion"],
+  trending: true,
+  createdAt: "2026-07-11",
+  prompt:
+    "Act as a senior SaaS copywriter. Create a complete landing page for [product]. Include: headline, subheadline, hero CTA, 5 key benefits, feature section, customer objections with responses, testimonials placeholders, FAQ, and a strong closing CTA. Focus on clarity, trust, and conversions instead of marketing buzzwords."
+},
+{
+  id: 52,
+  title: "YouTube Script Blueprint",
+  category: "Content Creation",
+  ai: "ChatGPT",
+  level: "Intermediate",
+  tags: ["youtube", "script", "content", "creator"],
+  trending: true,
+  createdAt: "2026-07-11",
+  prompt:
+    "Write a high-retention YouTube script about [topic]. Structure it into: Hook (first 15 seconds), Introduction, Main Content, Pattern Interrupts, Curiosity Loops, Practical Examples, Final Takeaway, and Call-to-Action. Keep viewers engaged without using misleading clickbait."
+},
+{
+  id: 53,
+  title: "AI Startup Idea Validator",
+  category: "Startup",
+  ai: "Claude",
+  level: "Advanced",
+  tags: ["startup", "validation", "business", "ideas"],
+  trending: false,
+  createdAt: "2026-07-11",
+  prompt:
+    "Evaluate this startup idea: [idea]. Analyze the target audience, market demand, competitors, monetization opportunities, biggest risks, unfair advantages, and first MVP features. Finish with a launch score out of 10 and explain how to improve weak areas before investing time or money."
+},
+{
+  id: 54,
+  title: "Advanced Resume Optimizer",
+  category: "Career",
+  ai: "ChatGPT",
+  level: "Intermediate",
+  tags: ["resume", "ats", "jobs", "career"],
+  trending: false,
+  createdAt: "2026-07-11",
+  prompt:
+    "Rewrite my resume for the following job description: [paste JD]. Improve ATS compatibility, quantify achievements wherever possible, remove weak wording, strengthen action verbs, and identify any missing skills or experiences that should be highlighted or learned."
+},
+{
+  id: 55,
+  title: "Personal Finance Roadmap",
+  category: "Finance",
+  ai: "Gemini",
+  level: "Beginner",
+  tags: ["finance", "budget", "saving", "investing"],
+  trending: false,
+  createdAt: "2026-07-11",
+  prompt:
+    "Act as a personal finance coach. Based on my monthly income, expenses, savings, debts, and financial goals, create a practical 12-month roadmap. Include a monthly budget, emergency fund target, debt repayment priority, investment suggestions based on risk tolerance, and common financial mistakes I should avoid."
+},
 ];
