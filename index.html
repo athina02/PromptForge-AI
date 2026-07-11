@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+<title>PromptForge AI — Build Better Prompts</title>
+<meta name="description" content="PromptForge AI is your pocket library of production-ready AI prompts for business, study, coding, social and fitness — search, save and copy in one tap." />
+
+<!-- Theme / PWA -->
+<meta name="theme-color" content="#0F172A" />
+<meta name="color-scheme" content="dark" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="PromptForge" />
+<link rel="manifest" href="./manifest.json" />
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16.png" />
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     APP SHELL
+     A single root the router shows/hides <section class="screen">
+     children inside. Bottom nav stays fixed outside the scroll
+     area of each screen.
+============================================================ -->
+<div id="appShell" class="app-shell">
+
+  <!-- ============ HOME ============ -->
+  <section class="screen" data-screen="home" id="screen-home">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">🐸</span>
+        <div class="brand-text">
+          <h1>PromptForge <span class="accent">AI</span></h1>
+          <p class="tagline">Build Better Prompts.</p>
+        </div>
+      </div>
+      <button class="icon-btn ripple" id="btnOpenSettings" aria-label="Open settings" data-nav="settings">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <div class="screen-scroll">
+
+      <!-- Search entry point: routes into the dedicated Search screen -->
+      <button class="search-launcher ripple" id="btnGoSearch" data-nav="search" aria-label="Search prompts">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <span>Search prompts, categories, tags…</span>
+      </button>
+
+      <!-- Featured -->
+      <section class="section" aria-labelledby="featuredHeading">
+        <div class="section-head">
+          <span class="eyebrow">🔥 Featured Prompt</span>
+        </div>
+        <article class="card featured-card glow-border" id="featuredCard">
+          <!-- populated by JS -->
+        </article>
+      </section>
+
+      <!-- Trending -->
+      <section class="section" aria-labelledby="trendingHeading">
+        <div class="section-head">
+          <h2 id="trendingHeading">Trending Now</h2>
+        </div>
+        <div class="rail" id="trendingRail">
+          <!-- populated by JS -->
+        </div>
+      </section>
+
+      <!-- Categories preview -->
+      <section class="section" aria-labelledby="categoriesHeading">
+        <div class="section-head">
+          <h2 id="categoriesHeading">Categories</h2>
+          <button class="link-btn ripple" data-nav="categories">See all</button>
+        </div>
+        <div class="cat-grid" id="homeCategoryGrid">
+          <!-- populated by JS -->
+        </div>
+      </section>
+
+      <!-- Recent -->
+      <section class="section" aria-labelledby="recentHeading">
+        <div class="section-head">
+          <h2 id="recentHeading">Recently Added</h2>
+        </div>
+        <div class="prompt-list" id="recentList">
+          <!-- populated by JS -->
+        </div>
+      </section>
+
+      <div class="scroll-spacer"></div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="screen" data-screen="categories" id="screen-categories">
+    <header class="topbar topbar-simple">
+      <h1 class="screen-title">Categories</h1>
+    </header>
+    <div class="screen-scroll">
+      <p class="screen-subtitle">Browse the library by craft. Tap a category to see every prompt inside it.</p>
+      <div class="cat-grid cat-grid-full" id="categoriesFullGrid">
+        <!-- populated by JS -->
+      </div>
+      <div class="scroll-spacer"></div>
+    </div>
+  </section>
+
+  <!-- ============ SEARCH ============ -->
+  <section class="screen" data-screen="search" id="screen-search">
+    <header class="topbar topbar-simple">
+      <h1 class="screen-title">Search</h1>
+    </header>
+    <div class="screen-scroll">
+      <div class="search-bar-wrap">
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search by title, category, AI, tag, difficulty…"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+          <button class="clear-btn" id="btnClearSearch" aria-label="Clear search" hidden>✕</button>
+        </div>
+      </div>
+
+      <div class="chip-row" id="categoryChipRow">
+        <!-- populated by JS: All + 5 categories -->
+      </div>
+
+      <div class="results-meta" id="searchResultsMeta" aria-live="polite"></div>
+
+      <div class="prompt-list" id="searchResultsList">
+        <!-- populated by JS -->
+      </div>
+
+      <div class="scroll-spacer"></div>
+    </div>
+  </section>
+
+  <!-- ============ FAVORITES ============ -->
+  <section class="screen" data-screen="favorites" id="screen-favorites">
+    <header class="topbar topbar-simple">
+      <h1 class="screen-title">Favorites</h1>
+    </header>
+    <div class="screen-scroll">
+      <div class="prompt-list" id="favoritesList">
+        <!-- populated by JS -->
+      </div>
+      <div class="scroll-spacer"></div>
+    </div>
+  </section>
+
+  <!-- ============ SETTINGS ============ -->
+  <section class="screen" data-screen="settings" id="screen-settings">
+    <header class="topbar topbar-simple">
+      <h1 class="screen-title">Settings</h1>
+    </header>
+    <div class="screen-scroll">
+
+      <div class="settings-profile">
+        <span class="brand-mark brand-mark-lg" aria-hidden="true">🐸</span>
+        <h2>PromptForge AI</h2>
+        <p>Build Better Prompts.</p>
+      </div>
+
+      <div class="settings-group">
+        <span class="settings-group-label">Appearance</span>
+        <div class="settings-row">
+          <div class="settings-row-text">
+            <strong>Theme</strong>
+            <p>Both variants are dark — pick the depth you prefer.</p>
+          </div>
+          <div class="segmented" id="themeSegmented" role="radiogroup" aria-label="Theme variant">
+            <button class="segmented-btn ripple" data-theme="midnight" role="radio" aria-checked="true">Midnight</button>
+            <button class="segmented-btn ripple" data-theme="obsidian" role="radio" aria-checked="false">Obsidian</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <span class="settings-group-label">Data</span>
+        <button class="settings-row settings-row-btn ripple" id="btnClearFavorites">
+          <div class="settings-row-text">
+            <strong>Clear Favorites</strong>
+            <p>Remove every saved prompt from this device.</p>
+          </div>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="settings-group">
+        <span class="settings-group-label">App</span>
+
+        <button class="settings-row settings-row-btn ripple" id="btnInstallApp">
+          <div class="settings-row-text">
+            <strong>Install App</strong>
+            <p id="installStatusText">Add PromptForge to your home screen.</p>
+          </div>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>
+        </button>
+
+        <div class="settings-row">
+          <div class="settings-row-text">
+            <strong>Offline Support</strong>
+            <p id="offlineStatusText">Checking service worker…</p>
+          </div>
+          <span class="status-dot" id="offlineStatusDot"></span>
+        </div>
+
+        <button class="settings-row settings-row-btn ripple" id="btnAbout">
+          <div class="settings-row-text">
+            <strong>About</strong>
+            <p>What PromptForge AI is and how it works.</p>
+          </div>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+
+        <div class="settings-row">
+          <div class="settings-row-text">
+            <strong>Version</strong>
+          </div>
+          <span class="version-tag">v1.0.0</span>
+        </div>
+      </div>
+
+      <div class="scroll-spacer"></div>
+    </div>
+  </section>
+
+  <!-- ============ PROMPT DETAILS ============ -->
+  <section class="screen screen-modal" data-screen="details" id="screen-details">
+    <header class="topbar topbar-simple">
+      <button class="icon-btn ripple" id="btnBackFromDetails" aria-label="Go back">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <h1 class="screen-title">Prompt Details</h1>
+      <button class="icon-btn ripple" id="detailsFavBtn" data-action="fav" aria-label="Toggle favorite">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+      </button>
+    </header>
+    <div class="screen-scroll" id="detailsBody">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+</div>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav" id="bottomNav" aria-label="Primary">
+  <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+  <button class="nav-btn ripple active" data-nav="home" aria-label="Home">
+    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/></svg>
+    <span>Home</span>
+  </button>
+  <button class="nav-btn ripple" data-nav="categories" aria-label="Categories">
+    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+    <span>Categories</span>
+  </button>
+  <button class="nav-btn ripple" data-nav="search" aria-label="Search">
+    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <span>Search</span>
+  </button>
+  <button class="nav-btn ripple" data-nav="favorites" aria-label="Favorites">
+    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+    <span>Favorites</span>
+  </button>
+  <button class="nav-btn ripple" data-nav="settings" aria-label="Settings">
+    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+    </svg>
+    <span>Settings</span>
+  </button>
+</nav>
+
+<!-- Toast host -->
+<div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+
+<!-- About sheet (simple modal) -->
+<div class="sheet-backdrop" id="aboutBackdrop" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+    <div class="sheet-handle"></div>
+    <h2 id="aboutTitle">🐸 About PromptForge AI</h2>
+    <p>PromptForge AI is a hand-curated library of production-ready prompts for Business, Study, Coding, Social and Fitness. Every prompt is written to be copied, filled in, and used immediately — no editing required.</p>
+    <p>Search, save your favorites, and install PromptForge on your home screen to keep the whole library with you, even offline.</p>
+    <button class="btn-primary ripple" id="btnCloseAbout">Got it</button>
+  </div>
+</div>
+
+<script src="./prompts.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
